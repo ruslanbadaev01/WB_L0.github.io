@@ -7,24 +7,25 @@
     <title>Document</title>
     <link rel="stylesheet" href="./style.css" />
   </head>
-  <body>
+  <body id="body">
     <header>
-      <div class="header_el">
-        <img src="/img/logo.png" alt="" />
+      <div class="header_el1 flex">
+        <img src="/img/logo2.png" alt="" />
+        <h2>ТОВАРЫ И ТОЧКА</h2>
       </div>
       <div>
         <input type="text" placeholder="Я ищу..." />
         <img class="search" src="/img/Search.png" alt="" />
       </div>
-      <div class="header_el">
+      <div class="header_el2">
         <img class="profile" src="/img/profile.png" alt="" />
         <img src="/img/cart.png" alt="" />
       </div>
     </header>
     <div class="br">
-      <div class="main_content">
+      <div id="pointer" class="main_content">
         <div class="wrapper">
-          <div>
+          <div class="pointer">
             <h1>Корзина</h1>
             <div>
               <div class="side_one">
@@ -260,7 +261,7 @@
             <div class="delivery">
               <div class="delivery_text">
                 <p>Способ доставки</p>
-                <p class="purple">Изменить</p>
+                <p onclick="changeDelivery()" class="purple">Изменить</p>
               </div>
               <div class="delivery_text two">
                 <p class="punkt">Пункт выдачи</p>
@@ -306,7 +307,7 @@
             <div class="pay_system_block">
               <div class="system">
                 <p>Способ оплаты</p>
-                <span>Изменить</span>
+                <span onclick="changePayMethod()">Изменить</span>
               </div>
               <div class="pay_system">
                 <img src="/img/MIR.png" alt="" />
@@ -352,7 +353,7 @@
             </div>
             <div class="location_change flex">
               <p>Доставка в пункт выдачи</p>
-              <img src="/img/pen.png" alt="" />
+              <div id="pen" class="pen"></div>
             </div>
             <span class="location"
               >Бишкек, улица Ахматбека Суюмбаева, 12/1
@@ -373,7 +374,7 @@
             </div>
             <div class="location_change flex">
               <p>Оплата картой</p>
-              <img src="/img/pen.png" alt="" />
+              <div class="pen"></div>
             </div>
             <div class="pay_system menu">
               <img src="/img/MIR.png" alt="" />
@@ -399,11 +400,79 @@
           </div>
         </div>
       </div>
+      <div id="pay_cont" class="payment_method">
+        <div class="flex">
+          <h1>Способ оплаты</h1>
+          <div id="close" class="cross"></div>
+        </div>
+        <div class="flex">
+          <button id="pay_but1" class="payment_method__button">
+            В пункт выдачи
+          </button>
+          <button id="pay_but2" class="payment_method__button">Курьером</button>
+        </div>
+
+        <div class="payment_method__container">
+          <h4>Мои адреса</h4>
+          <div class="flex">
+            <div class="flex">
+              <div id="eclipse1" class="eclipse"></div>
+              <p>Бишкек, улица Табышалиева, 57</p>
+            </div>
+            <div id="trash7" class="trash"></div>
+          </div>
+          <div class="flex">
+            <div class="flex">
+              <div id="eclipse2" class="eclipse"></div>
+              <p>Бишкек, улица Жукеева-Пудовкина, 77/1</p>
+            </div>
+            <div id="trash8" class="trash"></div>
+          </div>
+          <div class="flex">
+            <div class="flex">
+              <div id="eclipse3" class="eclipse"></div>
+              <p>Бишкек, микрорайон Джал, улица Ахунбаева Исы, 67/1</p>
+            </div>
+            <div id="trash9" class="trash"></div>
+          </div>
+          <button class="payment_method__accept">Выбрать</button>
+        </div>
+      </div>
+      <div id="pay_met" class="payment_method2_container">
+        <div>
+          <div class="flex">
+            <h1>Способ оплаты</h1>
+            <div id="close2" class="cross"></div>
+          </div>
+          <div class="payment_method2_content">
+            <div class="flex flex2">
+              <div id="eclipse4" class="eclipse"></div>
+              <img src="/img/MIR.png" alt="" />
+              <p>1234 56•• •••• 1234</p>
+            </div>
+            <div class="flex flex2">
+              <div id="eclipse5" class="eclipse"></div>
+              <img src="/img/visa.png" alt="" />
+              <p>1234 56•• •••• 1234</p>
+            </div>
+            <div class="flex flex2">
+              <div id="eclipse6" class="eclipse"></div>
+              <img src="/img/mastercard.png" alt="" />
+              <p>1234 56•• •••• 1234</p>
+            </div>
+            <div class="flex flex2">
+              <div id="eclipse7" class="eclipse"></div>
+              <img src="/img/peace.png" alt="" />
+              <p>1234 56•• •••• 1234</p>
+            </div>
+          </div>
+          <button class="payment_method__accept">Выбрать</button>
+        </div>
+      </div>
     </div>
     <footer>
       <p>© 2022 ООО «Товары и точка»</p>
     </footer>
   </body>
-
   <script src="/main.js"></script>
 </html>

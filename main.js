@@ -2,6 +2,10 @@ const imgChange = document.getElementById("img");
 const hide = document.getElementById("swiper");
 
 imgChange.addEventListener("click", function () {
+  document.getElementById("body").style.height = "1968px";
+  if (document.getElementById("body").style.height > "1388px") {
+    document.getElementById("body").style.height = "1388px";
+  }
   imgChange.classList.toggle("swipe_on");
   hide.classList.toggle("hiden");
 });
@@ -10,6 +14,10 @@ const imgChange2 = document.getElementById("img2");
 const hide2 = document.getElementById("swiper2");
 
 imgChange2.addEventListener("click", function () {
+  document.getElementById("body").style.height = "1388px";
+  if (document.getElementById("body").style.height > "1388px") {
+    document.getElementById("body").style.height = "1388px";
+  }
   imgChange2.classList.toggle("swipe_on");
   hide2.classList.toggle("hiden");
 });
@@ -38,6 +46,46 @@ const trash6 = document.getElementById("trash6");
 trash6.addEventListener("click", function () {
   trash6.classList.toggle("trash_on");
 });
+const trash7 = document.getElementById("trash7");
+trash7.addEventListener("click", function () {
+  trash7.classList.toggle("trash_on");
+});
+const trash8 = document.getElementById("trash8");
+trash8.addEventListener("click", function () {
+  trash8.classList.toggle("trash_on");
+});
+const trash9 = document.getElementById("trash9");
+trash9.addEventListener("click", function () {
+  trash9.classList.toggle("trash_on");
+});
+const eclipse1 = document.getElementById("eclipse1");
+eclipse1.addEventListener("click", function () {
+  eclipse1.classList.toggle("eclipse_on");
+});
+const eclipse2 = document.getElementById("eclipse2");
+eclipse2.addEventListener("click", function () {
+  eclipse2.classList.toggle("eclipse_on");
+});
+const eclipse3 = document.getElementById("eclipse3");
+eclipse3.addEventListener("click", function () {
+  eclipse3.classList.toggle("eclipse_on");
+});
+const eclipse4 = document.getElementById("eclipse4");
+eclipse4.addEventListener("click", function () {
+  eclipse4.classList.toggle("eclipse_on");
+});
+const eclipse5 = document.getElementById("eclipse5");
+eclipse5.addEventListener("click", function () {
+  eclipse5.classList.toggle("eclipse_on");
+});
+const eclipse6 = document.getElementById("eclipse6");
+eclipse6.addEventListener("click", function () {
+  eclipse6.classList.toggle("eclipse_on");
+});
+const eclipse7 = document.getElementById("eclipse7");
+eclipse7.addEventListener("click", function () {
+  eclipse7.classList.toggle("eclipse_on");
+});
 
 const like1 = document.getElementById("like1");
 like1.addEventListener("click", function () {
@@ -65,12 +113,18 @@ like6.addEventListener("click", function () {
   like6.classList.toggle("like_on");
 });
 
+const paybut1 = document.getElementById("pay_but1");
+paybut1.addEventListener("click", function () {
+  paybut1.classList.toggle("button_active");
+});
+const paybut2 = document.getElementById("pay_but2");
+paybut2.addEventListener("click", function () {
+  paybut2.classList.toggle("button_active");
+});
+
 let check = document.getElementById("chek_form");
 check = Boolean(check);
-const check_on = check.classList.toggle("check_on");
-
 function debitButton() {
-  console.log(check);
   if (check == true) {
     document.getElementById("chek_form").style.backgroundImage =
       "url(/img/checkbox.png)";
@@ -84,16 +138,34 @@ function debitButton() {
   }
 }
 
-const chek = document.getElementById("check");
-chek.addEventListener("click", function () {
-  chek.classList.toggle("check");
-  const chek1 = document.getElementById("chek1");
-  const chek2 = document.getElementById("chek2");
-  const chek3 = document.getElementById("chek3");
+function changePayMethod() {
+  document.getElementById("pointer").style.pointerEvents = "none";
+  const pay_met = document.getElementById("pay_met");
+  pay_met.classList.add("payment_method2_container_on");
+}
 
-  if (chek.classList.value === "check_on check") {
-    chek1.classList.toggle("check");
-    chek2.classList.toggle("check");
-    chek3.classList.toggle("check");
-  }
+const closer2 = document.getElementById("close2");
+closer2.addEventListener("click", function () {
+  document.getElementById("pointer").style.pointerEvents = "all";
+  const pay_met = document.getElementById("pay_met");
+  pay_met.classList.toggle("payment_method2_container_on");
+});
+
+function changeDelivery() {
+  document.getElementById("pointer").style.pointerEvents = "none";
+
+  const pay = document.getElementById("pay_cont");
+  pay.classList.add("payment_method_on");
+}
+
+const closer = document.getElementById("close");
+closer.addEventListener("click", function () {
+  document.getElementById("pointer").style.pointerEvents = "all";
+  const pay = document.getElementById("pay_cont");
+  pay.classList.toggle("payment_method_on");
+});
+const pen = document.getElementById("pen");
+pen.addEventListener("click", function () {
+  const pay = document.getElementById("pay_cont");
+  pay.classList.toggle("payment_method_on");
 });

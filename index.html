@@ -30,7 +30,7 @@
             <div>
               <div class="side_one">
                 <div class="chekbox">
-                  <div id="check" class="check_on"></div>
+                  <div id="check" onclick="setCheck()" class="check_on"></div>
                   <p>Выбрать все</p>
                 </div>
                 <div>
@@ -63,9 +63,9 @@
                       <div>
                         <div class="price_counter">
                           <div class="counter">
-                            <p>-</p>
-                            <span>1</span>
-                            <p>+</p>
+                            <div class="counter_minus1">-</div>
+                            <span class="counter_value1">1</span>
+                            <div class="counter_plus1">+</div>
                           </div>
                         </div>
                         <p class="last">Осталось 2 шт.</p>
@@ -75,7 +75,7 @@
                         </div>
                       </div>
                       <div class="price">
-                        <p class="sale_price">522 com</p>
+                        <p id="price1" class="sale_price">522 com</p>
                         <p class="old_price">1051 com</p>
                         <div class="line_price1"></div>
                       </div>
@@ -115,9 +115,9 @@
                       <div>
                         <div class="price_counter">
                           <div class="counter">
-                            <p>-</p>
-                            <span>200</span>
-                            <p>+</p>
+                            <div class="counter_minus2">-</div>
+                            <span class="counter_value2">1</span>
+                            <div class="counter_plus2">+</div>
                           </div>
                         </div>
                         <div class="like_trash">
@@ -126,7 +126,7 @@
                         </div>
                       </div>
                       <div class="price">
-                        <p class="sale_price">2 100 047 com</p>
+                        <p id="price2" class="sale_price">300com</p>
                         <p class="old_price">2 300 047 com</p>
                         <div class="line_price2"></div>
                         <div class="info_price">
@@ -165,9 +165,9 @@
                       <div>
                         <div class="price_counter">
                           <div class="counter">
-                            <p>-</p>
-                            <span>2</span>
-                            <p>+</p>
+                            <div class="counter_minus3">-</div>
+                            <span class="counter_value3">1</span>
+                            <div class="counter_plus3">+</div>
                           </div>
                         </div>
                         <p class="last">Осталось 2 шт.</p>
@@ -177,7 +177,7 @@
                         </div>
                       </div>
                       <div class="price">
-                        <p class="sale_price">494 com</p>
+                        <p id="price3" class="sale_price">494 com</p>
                         <p class="old_price">950 com</p>
                         <div class="line_price3"></div>
                       </div>
@@ -316,10 +316,10 @@
               </div>
               <p class="pay_on_card">Спишем оплату с карты при получении</p>
             </div>
-            <div class="poluchatel">
+            <form onsubmit="alert('submit!');return false" class="poluchatel">
               <p>Получатель</p>
               <div>
-                <input class="FIO" placeholder="Имя" type="text" />
+                <input class="FIO" placeholder="Имя" type="text" required />
                 <input class="FIO" placeholder="Фамилия" type="text" />
               </div>
               <div class="form">
@@ -330,7 +330,7 @@
                   <p class="INN">Для таможенного оформления</p>
                 </div>
               </div>
-            </div>
+            </form>
           </div>
           <div class="cart_menu">
             <div class="result flex">
@@ -374,7 +374,7 @@
             </div>
             <div class="location_change flex">
               <p>Оплата картой</p>
-              <div class="pen"></div>
+              <div id="pen2" class="pen"></div>
             </div>
             <div class="pay_system menu">
               <img src="/img/MIR.png" alt="" />
@@ -387,7 +387,7 @@
               </div>
               <p>Спишем оплату с карты при получении</p>
             </div>
-            <button id="change_html">Заказать</button>
+            <button type="submit" id="change_html">Заказать</button>
             <div class="root">
               <img src="/img/done.png" alt="" />
               <p>

@@ -1,3 +1,101 @@
+let counterDisplay1 = document.querySelector(".counter_value1");
+let counterPlus1 = document.querySelector(".counter_plus1");
+let counterMinus1 = document.querySelector(".counter_minus1");
+
+let count1 = 1;
+
+updateDisplay1();
+
+counterPlus1.addEventListener("click", () => {
+  count1++;
+  updateDisplay1();
+  priceCounter1();
+});
+counterMinus1.addEventListener("click", () => {
+  count1--;
+  nullSave();
+  updateDisplay1();
+  priceCounter1();
+});
+function nullSave() {
+  if (count1 <= 0) {
+    count1 = 0;
+  }
+}
+function updateDisplay1() {
+  counterDisplay1.innerHTML = count1;
+}
+let priceCount1 = document.getElementById("price1");
+function priceCounter1() {
+  let res = count1 * 522;
+  priceCount1.innerHTML = res + " com";
+}
+let counterDisplay2 = document.querySelector(".counter_value2");
+let counterPlus2 = document.querySelector(".counter_plus2");
+let counterMinus2 = document.querySelector(".counter_minus2");
+
+let count2 = 1;
+
+updateDisplay2();
+
+counterPlus2.addEventListener("click", () => {
+  count2++;
+  updateDisplay2();
+  priceCounter2();
+});
+counterMinus2.addEventListener("click", () => {
+  count2--;
+  nullSave();
+  updateDisplay2();
+  priceCounter2();
+});
+function nullSave() {
+  if (count2 <= 0) {
+    count2 = 0;
+  }
+}
+function updateDisplay2() {
+  counterDisplay2.innerHTML = count2;
+}
+let priceCount2 = document.getElementById("price2");
+function priceCounter2() {
+  let res = count2 * 300;
+  priceCount2.innerHTML = res + " com";
+}
+
+let counterDisplay3 = document.querySelector(".counter_value3");
+let counterPlus3 = document.querySelector(".counter_plus3");
+let counterMinus3 = document.querySelector(".counter_minus3");
+
+let count3 = 1;
+
+updateDisplay3();
+
+counterPlus3.addEventListener("click", () => {
+  count3++;
+  updateDisplay3();
+  priceCounter3();
+});
+counterMinus3.addEventListener("click", () => {
+  count3--;
+  nullSave();
+  updateDisplay3();
+  priceCounter3();
+});
+function nullSave() {
+  if (count3 <= 0) {
+    count3 = 0;
+  }
+}
+function updateDisplay3() {
+  counterDisplay3.innerHTML = count3;
+}
+let priceCount3 = document.getElementById("price3");
+function priceCounter3() {
+  let res = count3 * 494;
+  priceCount3.innerHTML = res + " com";
+}
+
 const imgChange = document.getElementById("img");
 const hide = document.getElementById("swiper");
 
@@ -138,6 +236,40 @@ function debitButton() {
   }
 }
 
+let checkBox = document.getElementById("check");
+checkBox = Boolean(checkBox);
+function setCheck() {
+  if (checkBox == true) {
+    resultPrice();
+
+    document.getElementById("check").style.backgroundImage =
+      "url(/img/unchekbox.png)";
+    document.getElementById("chek1").style.backgroundImage =
+      "url(/img/unchekbox.png)";
+    document.getElementById("chek2").style.backgroundImage =
+      "url(/img/unchekbox.png)";
+    document.getElementById("chek3").style.backgroundImage =
+      "url(/img/unchekbox.png)";
+    checkBox = false;
+  } else if (checkBox == false) {
+    document.getElementById("check").style.backgroundImage =
+      "url(/img/checkbox.png)";
+    document.getElementById("chek1").style.backgroundImage =
+      "url(/img/checkbox.png)";
+    document.getElementById("chek2").style.backgroundImage =
+      "url(/img/checkbox.png)";
+    document.getElementById("chek3").style.backgroundImage =
+      "url(/img/checkbox.png)";
+    checkBox = true;
+  }
+}
+
+function resultPrice() {
+  if (checkBox == true) {
+    console.log(price1 + price2 + price3);
+  }
+}
+
 function changePayMethod() {
   document.getElementById("pointer").style.pointerEvents = "none";
   const pay_met = document.getElementById("pay_met");
@@ -153,7 +285,6 @@ closer2.addEventListener("click", function () {
 
 function changeDelivery() {
   document.getElementById("pointer").style.pointerEvents = "none";
-
   const pay = document.getElementById("pay_cont");
   pay.classList.add("payment_method_on");
 }
@@ -166,6 +297,14 @@ closer.addEventListener("click", function () {
 });
 const pen = document.getElementById("pen");
 pen.addEventListener("click", function () {
+  document.getElementById("pointer").style.pointerEvents = "none";
   const pay = document.getElementById("pay_cont");
   pay.classList.toggle("payment_method_on");
+});
+const pen2 = document.getElementById("pen2");
+pen2.addEventListener("click", function () {
+  document.getElementById("pointer").style.pointerEvents = "none";
+
+  const pay2 = document.getElementById("pay_met");
+  pay2.classList.toggle("payment_method2_container_on");
 });
